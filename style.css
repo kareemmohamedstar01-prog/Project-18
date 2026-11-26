@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'DM Sans' , sans-serif;
+    padding: 50px;
+}
+
+.container {
+    /* background-color: aqua; */
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    padding: 20px;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;   لا نستخدم الديسبلاي قليكس مع الديسبلاي جريد في نفس الكلاس لان المتصفح بياخد واحدة بس */
+    gap: 20px;
+
+    display: grid;
+    grid-template: 
+        " card1 card2  card2  card3 " 250px
+        " card1 card4  card5  card3 " 110px
+        " card6 card4  card5  card3 " 110px
+        " card6 card7  card8  card8 " 250px
+        / minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) ; 
+}
+
+.card-1 {
+    grid-area: card1;
+
+    background-color: hsl(31, 66%, 93%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 32px;
+    border-radius: 10px;
+}
+
+.card-1 span {
+    color: hsl(256, 67%, 59%);
+    font-style: italic;
+}
+
+.card-2 {
+    grid-area: card2;
+
+    background-color: hsl(256, 67%, 59%);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    border-radius: 10px;
+    padding: 32px;
+    color: white;
+    text-align: center;
+}
+
+.card-2 span {
+    color: hsl(39, 100%, 71%);
+
+}
+
+.card-2  h1 {
+    font-size: 50px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.card-2 .range {
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-2 .range img {
+    width: 100%;
+    max-width: 160px;
+
+}
+
+.card-3 {
+    grid-area: card3;
+
+    background-color: hsl(254, 88%, 90%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    border-radius: 10px;
+    padding: 30px;
+    overflow: hidden;
+
+}
+
+.card-3 img {
+
+    width: 350px;
+    height: 250px;
+}
+
+.card-4 {
+    grid-area: card4;
+
+    background-color: hsl(0, 0%, 100%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    border-radius: 10px;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.card-4 img {
+    width: 100%;
+    width: 290px;
+    height: 50px;
+}
+
+.card-5 {
+    grid-area: card5;
+
+    background-color: hsl(39, 100%, 71%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.card-5 img {
+    height: 100px;
+    max-width: 100%;
+}
+
+.card-6 {
+    grid-area: card6;
+
+    background-color: hsl(39, 100%, 71%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.card-6 img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.card-7 {
+    grid-area: card7;
+
+    background-color: hsl(0, 0%, 100%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.card-7 h1 {
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.card-7 img {
+    width: 100%;
+    max-width: 150px;
+}
+
+.card-8 {
+    grid-area: card8;
+
+    background-color: hsl(256, 67%, 59%);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    border-radius: 10px;
+    padding: 25px;
+    color: white;
+}
+
+.card-8 h2 {
+    max-width: 50%;
+}
+
+.card-8 img {
+    max-width: 50%;
+}
+
+@media(max-width:375px){
+
+    body {
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+        min-width: 320px;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .card-3 p {
+        text-align: center;
+    }
+
+    .card-3 img {
+        width: 100%;
+    }
+
+    .card-4 img {
+        width: 100%;
+    }
+
+    .card-5 {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .card-8 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .card-8 h2 {
+        font-size: 18px;
+    }
+
+    .card-8 img {
+        max-width: 80%;
+    }
+}
